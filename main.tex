@@ -1,0 +1,75 @@
+\documentclass[a4paper, 12pt]{report}
+
+%%%%%%%%%%%%
+% Packages %
+%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+\usepackage[noheader]{packages/sleek}
+\usepackage{packages/sleek-title}
+\usepackage{packages/sleek-theorems}
+\usepackage{packages/sleek-listings}
+
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{gensymb}
+
+%%%%%%%%%%%%%%
+% Title-page %
+%%%%%%%%%%%%%%
+
+\logo{./resources/img/NIT_Agartala_Logo.png}
+\institute{National Institute of Technology\\Agartala}
+% \faculty{Computer Science and Engineering}
+\department{Department of Computer Science and Engineering}
+\title{Digital Image Processing :}
+\subtitle{A CONCEPT NOTE}
+\author{\textit{Author}\\Jashaswimalya Acharjee\\Undergraduate Student, CSE Dept.}
+\supervisor{\textit{Instructor}\\Dr. Parthasarathi De\\Assistant Professor, CSE Dept.}
+%\context{Well, I was bored...}
+\date{}
+
+%%%%%%%%%%%%%%%%
+% Bibliography %
+%%%%%%%%%%%%%%%%
+
+\addbibresource{./resources/bib/references.bib}
+
+%%%%%%%%%%
+% Others %
+%%%%%%%%%%
+
+\lstdefinestyle{latex}{
+    language=TeX,
+    style=default,
+    %%%%%
+    commentstyle=\ForestGreen,
+    keywordstyle=\TrueBlue,
+    stringstyle=\VeronicaPurple,
+    emphstyle=\TrueBlue,
+    %%%%%
+    emph={LaTeX, usepackage, textit, textbf, textsc}
+}
+
+\FrameTBStyle{latex}
+
+\def\tbs{\textbackslash}
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    \romantableofcontents
+
+	\include{chapters/intro}
+	\cleardoublepage
+	\include{chapters/connectivity}
+	\cleardoublepage
+	\include{chapters/image_op}
+	\cleardoublepage
+    \include{chapters/img_enhancement}
+
+\end{document}

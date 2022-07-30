@@ -1,0 +1,273 @@
+\chapter{Image Enhancement}
+
+\section{Histogram Manipulation}
+
+Histogram Manipulation basically modifies the histogram of an input image so as to improve the visual quality of the image.
+In order to understand histogram manipulation, it is necessary to understand what a `Histogram' is and how `histogram equalisation' technique affects the visual quality of the image.
+
+\subsection{Histogram}
+The Histogram of an image is a plot or visual representation of the number of occurences of each gray level present in the image.
+The Histogram provides a convenient summary of the intensities of an image, but it is unable to convey any information regarding spatial relationships between individual pixels.
+The histogram provides more insight about image \textit{contrast} and \textit{brightness}.
+
+Some properties of a typical histogram are listed as follows:
+\begin{enumerate}
+    \item The histogram of a dark image will be clustered towards the lower gray levels.
+    \item The histogram of a bright image will be clustered towards the higher gray levels.
+    \item For a low-contrast image, the histogram will not be spread equally, i.e., the histogram will be narrow.
+    \item For a high-contrast image, the histogram will have an equal spread in the gray levels.
+\end{enumerate}
+
+The Image Brightness may be improved by modifying the histogram of the image.
+
+\subsection{Histogram Equalisation}
+
+Equalisation is a process that attempts to spread out the gray levels in an image so that they are evenly distributed across their range.
+It flattens the histogram to create a better quality image.
+Histogram equalisation reassigns the brightness values of pixels based on the image histogram.
+Histogram equalisation is a technique where the histogram of the resultant image is as flat as possible.
+It also provides a more visually pleasing result across a wider range of images.
+
+\subsubsection{Procedure to Perform Histogram Equalisation:}
+
+Histogram equalisation is done by performing the following steps:
+\begin{enumerate}
+    \item Create the frequency distribution table for each gray level from the given input image. 
+    \item Find the running sum of the histogram values.
+    \item Normalise the values from the previous step, by dividing by the total number of pixels.
+    \item Multiply the values from the previous step, by the maximum gray-level value and round it to nearest integer.
+    \item Map the gray level values to the result obtained in the previous step, using a one-to-one correspondence.
+\end{enumerate}
+
+\subsubsection{Question:}
+Perform histogram equalisation of the following image.
+\begin{equation*}
+    \begin{bmatrix}
+        4 & 4 & 4 & 4 & 4\\
+        3 & 4 & 5 & 4 & 3\\
+        3 & 5 & 5 & 5 & 3\\
+        3 & 4 & 5 & 4 & 3\\
+        4 & 4 & 4 & 4 & 4
+    \end{bmatrix}
+\end{equation*}
+
+\textit{Solution:}\ \ \ \ The maximum value in this case is found to be 5.
+A minimum of 3 bits to represent the number.
+There are eight possible gray levels from 0 to 7.
+The histogram of the input image is given below:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Gray Level & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+        \hline
+        Number of Pixels & 0 & 0 & 0 & 6 & 14 & 5 & 0 & 0\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\textbf\textit{Step 1:} Compute the running sum of histogram values.
+
+\begin{table*}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Gray Level & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+        \hline
+        Number of Pixels & 0 & 0 & 0 & 6 & 14 & 5 & 0 & 0\\
+        \hline
+        Running Sum & 0 & 0 & 0 & 6 & 20 & 25 & 25 & 25\\
+        \hline
+    \end{tabular}
+\end{table*}
+
+\textbf\textit{Step 2:} Divide the Running Sum obtained in \textit{Step 1} by the total number of pixels. In this case, the total number of pixels is \textbf{25}.
+
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{|p{4.5cm}|c|c|c|c|c|c|c|c|}
+        \hline
+        Gray Level & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+        \hline
+        Number of Pixels & 0 & 0 & 0 & 6 & 14 & 5 & 0 & 0\\
+        \hline
+        Running Sum & 0 & 0 & 0 & 6 & 20 & 25 & 25 & 25\\
+        \hline
+        Running Sum / Total Number of Pixels & 0/25 & 0/25 & 0/25 & 6/25 & 20/25 & 25/25 & 25/25 & 25/25\\
+        \hline
+    \end{tabular}
+\end{table*}
+
+\textbf\textit{Step 3:} Multiply the result obtained in \textit{Step 2} by the maximum gray-level value, which is 7 in this case.
+
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{|p{4cm}|c|c|c|c|c|c|c|c|}
+        \hline
+        Gray Level & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+        \hline
+        Number of Pixels & 0 & 0 & 0 & 6 & 14 & 5 & 0 & 0\\
+        \hline
+        Running Sum & 0 & 0 & 0 & 6 & 20 & 25 & 25 & 25\\
+        \hline
+        Running Sum & 0 & 0 & 0 & 6 & 20 & 25 & 25 & 25\\
+        \hline
+        Multiplying by Maximum Gray Level & $\frac{0}{25}\times 7$ & $\frac{0}{25}\times 7$ & $\frac{0}{25}\times 7$ & $\frac{6}{25}\times 7$ & $\frac{20}{25}\times 7$ & $\frac{25}{25}\times 7$ & $\frac{25}{25}\times 7$ & $\frac{25}{25}\times 7$\\
+        \hline
+    \end{tabular}
+\end{table*}
+
+\textit{Rounding off to the closest Integer values.}
+
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Gray Level & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+        \hline
+        Number of Pixels & 0 & 0 & 0 & 6 & 14 & 5 & 0 & 0\\
+        \hline
+        Running Sum & 0 & 0 & 0 & 6 & 20 & 25 & 25 & 25\\
+        \hline
+        Running Sum & 0 & 0 & 0 & 6 & 20 & 25 & 25 & 25\\
+        \hline
+        Multiplying by Maximum Gray Level & 0 & 0 & 0 & 2 & 6 & 7 & 7 & 7\\
+        \hline
+    \end{tabular}
+\end{table*}
+
+\textbf\textit{Step 4:} Mapping of Gray Levels by one-to-one correspondence.
+
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Original Gray Level & Histogram Equalised Values\\
+        \hline
+        0 & 0\\
+        \hline
+        1 & 0\\
+        \hline
+        2 & 0\\
+        \hline
+        3 & 2\\
+        \hline
+        4 & 6\\
+        \hline
+        5 & 7\\
+        \hline
+        6 & 7\\
+        \hline
+        7 & 7\\
+        \hline
+    \end{tabular}
+\end{table*}
+
+Here, the Original Image and Histogram Equalised Image are shown side by side:
+
+\begin{equation*}
+    \centering
+    \begin{bmatrix}
+        4 & 4 & 4 & 4 & 4\\
+        3 & 4 & 5 & 4 & 3\\
+        3 & 5 & 5 & 5 & 3\\
+        3 & 4 & 5 & 4 & 3\\
+        4 & 4 & 4 & 4 & 4
+    \end{bmatrix} \rightarrow \begin{bmatrix}
+        6 & 6 & 6 & 6 & 6\\
+        2 & 6 & 7 & 6 & 2\\
+        2 & 7 & 7 & 7 & 2\\
+        2 & 6 & 7 & 6 & 2\\
+        6 & 6 & 6 & 6 & 6
+    \end{bmatrix}
+\end{equation*}
+
+\section{Bit-Plane Slicing}
+
+The Gray Level of each pixel in a digital image is stored as one or more bytes in a computer.
+For an 8-bit image, 0 is encoded as 0 0 0 0 0 0 0 0, and 255 is encoded as 1 1 1 1 1 1 1 1.
+Any Number between 0 and 255 is encoded as one byte.
+The bit in the far left side is referred as the Most Significant Bit (MSB), because a change in that bit would significantly change the value encoded by the byte.
+The bit in the far right is referred as the Least Significant Bit (LSB), because a change in this bit does not change the encoded gray value much.
+
+Bit plane slicing is a method of representing an image with one or more bits of the byte used for each pixel.
+One can use only the MSB to represent a pixel, which reduces the original gray level to a binary image.
+The three main goals of bit plane slicing are:
+\begin{enumerate}
+    \item Converting a gray level image to a bianry image.
+    \item Representing an image with fewer bits and compressing the image to a smaller size.
+    \item Enhancing the image by focusing.
+\end{enumerate}
+
+\subsection{Bit-Plane Transformations}
+
+It is possible to transform a gray level image into a sequence of binary images by taking advantage of its bit pattern storage.
+For example, a gray level image is stored as an 8-bit image. Therefore, the image can be transformed into an 8-level image where the zero planes consist of the last bit of each gray level.
+The first plane consists of the first bit of each gray value.
+Similarly, the most significant bit plane has the greatest effect in terms of the magnitude of the image.
+It is roughly equivalent to the threshold of the image at level 127.
+Depending on the requirement, the bit planes can be retained or ignored.
+
+\subsubsection{Question:}
+Show the bit-plane slicing of the following image:
+\begin{equation*}
+    \begin{bmatrix}
+        7 & 6 & 5\\
+        4 & 3 & 2\\
+        1 & 1 & 0
+    \end{bmatrix}
+\end{equation*}
+
+\textit{Solution:}
+The Binary Equivalent of the pixels is:
+
+\begin{equation*}
+    \begin{bmatrix}
+        111 & 110 & 101\\
+        100 & 011 & 010\\
+        001 & 001 & 000
+    \end{bmatrix}
+\end{equation*}
+
+\textit{Case-I:} When LSB is changed to 0, this image is reduced to:
+
+\begin{equation*}
+    \begin{bmatrix}
+        110 & 110 & 100\\
+        100 & 010 & 010\\
+        000 & 000 & 000
+    \end{bmatrix}
+\end{equation*}
+
+The Equivalent Image of the above:
+
+\begin{equation*}
+    \begin{bmatrix}
+        6 & 6 & 4\\
+        4 & 2 & 2\\
+        0 & 0 & 0
+    \end{bmatrix}
+\end{equation*}
+
+\textit{Case-II:} When the MSB is changed to 0, this image changes to:
+
+\begin{equation*}
+    \begin{bmatrix}
+        011 & 010 & 001\\
+        000 & 011 & 010\\
+        001 & 001 & 000
+    \end{bmatrix}
+\end{equation*}
+
+The Equivalent Image of the above Binary Image:
+
+\begin{equation*}
+    \begin{bmatrix}
+        3 & 2 & 1\\
+        0 & 3 & 2\\
+        1 & 1 & 0
+    \end{bmatrix}
+\end{equation*}
+
+Thus, Bit-Plane Slicing Leads to Transformation of Images.

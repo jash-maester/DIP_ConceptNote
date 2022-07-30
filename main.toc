@@ -1,0 +1,58 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Image}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Analog Image}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Digital Image}{1}{subsection.1.1.2}%
+\contentsline {subsubsection}{Advantages of Digital Images:}{1}{section*.3}%
+\contentsline {subsubsection}{Drawbacks of Digital Images:}{2}{section*.4}%
+\contentsline {section}{\numberline {1.2}Digital Image Processing}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Digital Image Representation}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Neighbours of a Pixel}{3}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}Classification of Digital Images}{3}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Raster Image or Bitmap Image}{3}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Vector Image}{4}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Image Types}{4}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Binary Image}{5}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Grayscale Image}{5}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Color Image}{5}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Volume Image}{5}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Range Image}{5}{subsection.1.5.5}%
+\contentsline {section}{\numberline {1.6}Image File Formats}{6}{section.1.6}%
+\contentsline {subsubsection}{Common Image File Formats:}{6}{section*.7}%
+\contentsline {subsection}{\numberline {1.6.1}File Header}{6}{subsection.1.6.1}%
+\contentsline {section}{\numberline {1.7}Applications of Digital Image Processing:}{6}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Operations on Images}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Pixel Connectivity}{7}{section.2.1}%
+\contentsline {subsubsection}{4-Connectivity:}{7}{section*.8}%
+\contentsline {subsubsection}{6-Connectivity:}{7}{section*.9}%
+\contentsline {subsubsection}{8-Connectivity:}{7}{section*.10}%
+\contentsline {subsubsection}{Mixed Connectivity:}{8}{section*.12}%
+\contentsline {section}{\numberline {2.2}Distance Measures}{8}{section.2.2}%
+\contentsline {subsubsection}{Euclidean Distance:}{9}{section*.15}%
+\contentsline {subsubsection}{$D_4$ Distance or City Block Distance:}{9}{section*.16}%
+\contentsline {subsubsection}{$D_8$ Distance or Chessboard Distance:}{9}{section*.17}%
+\contentsline {subsubsection}{Question:}{9}{section*.18}%
+\contentsline {chapter}{\numberline {3}Image Operations}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Arithmetic Operations}{11}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Image Addition}{11}{subsection.3.1.1}%
+\contentsline {subsubsection}{Brightness of an image:}{12}{section*.21}%
+\contentsline {subsubsection}{Double Exposure:}{12}{section*.22}%
+\contentsline {subsection}{\numberline {3.1.2}Image Subtraction}{12}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Image Multiplication}{13}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Image Division}{13}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Geometric Operations}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Translation Operation}{14}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Scaling Operation}{15}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Zooming Operation}{15}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Linear Interpolation Operation}{15}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Mirror or Reflection Operation}{16}{subsection.3.2.5}%
+\contentsline {chapter}{\numberline {4}Image Enhancement}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Histogram Manipulation}{18}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Histogram}{18}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Histogram Equalisation}{18}{subsection.4.1.2}%
+\contentsline {subsubsection}{Procedure to Perform Histogram Equalisation:}{19}{section*.23}%
+\contentsline {subsubsection}{Question:}{19}{section*.24}%
+\contentsline {section}{\numberline {4.2}Bit-Plane Slicing}{20}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Bit-Plane Transformations}{21}{subsection.4.2.1}%
+\contentsline {subsubsection}{Question:}{21}{section*.31}%
