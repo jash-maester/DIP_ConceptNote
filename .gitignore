@@ -1,0 +1,13 @@
+.ipynb_checkpoints/
+.ipynb_checkpoints
+*.bbl
+*.bcf
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.xml
+*.dio
+*.toc
